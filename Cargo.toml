@@ -1,0 +1,20 @@
+[package]
+name = "fastlio"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[lib]
+path = "src/laserMapping.rs"
+
+[[bin]]
+name = "fastlio"
+path = "src/laserMapping.rs"
+
+[dependencies]
+cxx = "1"
+
+[build-dependencies]
+cmake = "0.1"
+cxx-build = "1"
+pkg-config = "0.3"

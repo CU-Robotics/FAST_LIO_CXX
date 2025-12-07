@@ -1,3 +1,9 @@
+# FAST_LIO_CXX_NoROS
+This is a modification of the FAST_LIO library stripped of the ROS dependency with a CXX bridge for Rust interoperability. Currently under development. Intended for use by the CU Boulder Robotics team.
+
+Compile the C++ with cmake_build.sh, then compile the Rust with rust_build.sh.
+
+# Original FAST_LIO Documentation
 ## Related Works and Extended Application
 
 **SLAM:**
