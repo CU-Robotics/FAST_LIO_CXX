@@ -3,6 +3,8 @@ This is a modification of the FAST_LIO library stripped of the ROS dependency wi
 
 Compile the C++ with cmake_build.sh, then compile the Rust with rust_build.sh.
 
+Rust Crate: https://crates.io/crates/fastlio_cxx_noros
+
 # Original FAST_LIO Documentation
 ## Related Works and Extended Application
 
