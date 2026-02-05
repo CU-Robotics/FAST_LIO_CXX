@@ -5,8 +5,8 @@ edition = "2021"
 build = "build.rs"
 license-file="LICENSE"
 description="Rust bindings for FAST_LIO LiDAR Inertial Odometry without the ROS dependency."
-homepage="https://github.com/vp13t/FAST_LIO_CXX_NoROS#"
-repository="https://github.com/vp13t/FAST_LIO_CXX_NoROS#"
+homepage="https://github.com/CU-Robotics/FAST_LIO_CXX#"
+repository="https://github.com/CU-Robotics/FAST_LIO_CXX#"
 readme="README.md"
 
 [lib]
