@@ -1,6 +1,6 @@
 [package]
 name = "fastlio_cxx_noros"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 build = "build.rs"
 license-file="LICENSE"
