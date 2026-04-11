@@ -1,10 +1,12 @@
 #ifndef MSG_H
 #define MSG_H
 
-#include <memory.h>
+#include <memory>
 #include <time.h>
 #include <stdint.h>
 #include <vector>
+#include <cmath>
+#include <string>
 
 namespace fast_lio {
     struct Pose6D {
