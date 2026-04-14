@@ -1,5 +1,5 @@
 #[cxx::bridge]
-mod ffi {
+pub mod ffi {
     // Shared structs (match the *Msg types above)
     struct TimeMsg { sec: i64, nsec: i64 }
     struct HeaderMsg { seq: u32, stamp: TimeMsg, frame_id: String }

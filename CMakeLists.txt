@@ -46,3 +46,9 @@ else()
     ${PCL_KDTREE_LIBRARIES}
   )
 endif()
+
+install(TARGETS fastlio_mapping
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+)

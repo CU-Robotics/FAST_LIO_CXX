@@ -1,6 +1,6 @@
-mod fastlio_bindings;
+use crate::fastlio_bindings;
 
-pub fn main() {
+pub fn run() {
     fastlio_bindings::fastlio_init();
     let dt = std::time::Duration::from_micros(200); // 5000 Hz
     let mut status = true;

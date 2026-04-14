@@ -10,11 +10,8 @@ repository="https://github.com/CU-Robotics/FAST_LIO_CXX#"
 readme="README.md"
 
 [lib]
-path = "src/laserMapping.rs"
-
-[[bin]]
 name = "fastlio_cxx_noros"
-path = "src/laserMapping.rs"
+path = "src/lib.rs"
 
 [dependencies]
 cxx = "1"
