@@ -3,16 +3,15 @@ use crate::fastlio_bindings;
 pub fn run() {
     fastlio_bindings::fastlio_init();
     let dt = std::time::Duration::from_micros(200); // 5000 Hz
-    let mut status = true;
     let mut count = 0;
-    while status && count < 100 {
+    while count < 100 {
         // Do this when IMU has data
         // imu_cbk(imu_data);
 
         // Do this when LiDar has PointCloud data
         // standard_pcl_cbk(lidar_data);
         println!("Iteration {}", count);
-        let data = fastlio_bindings::fastlio_run();
+        let _data = fastlio_bindings::fastlio_run();
         std::thread::sleep(dt);
         count += 1;
     }

@@ -1,32 +1,80 @@
 #[cxx::bridge]
 pub mod ffi {
     // Shared structs (match the *Msg types above)
-    struct TimeMsg { sec: i64, nsec: i64 }
-    struct HeaderMsg { seq: u32, stamp: TimeMsg, frame_id: String }
+    #[derive(Debug)]
+    struct TimeMsg {
+        sec: i64,
+        nsec: i64,
+    }
+
+    #[derive(Debug)]
+    struct HeaderMsg {
+        seq: u32,
+        stamp: TimeMsg,
+        frame_id: String,
+    }
 
     #[namespace = "geometry_msgs"]
-    struct Vector3Msg { x: f32, y: f32, z: f32 }
+    #[derive(Debug)]
+    struct Vector3Msg {
+        x: f32,
+        y: f32,
+        z: f32,
+    }
     #[namespace = "geometry_msgs"]
-    struct QuaternionMsg { x: f32, y: f32, z: f32, w: f32 }
+    #[derive(Debug)]
+    struct QuaternionMsg {
+        x: f32,
+        y: f32,
+        z: f32,
+        w: f32,
+    }
     #[namespace = "geometry_msgs"]
-    struct PoseMsg { position: Vector3Msg, orientation: QuaternionMsg }
+    #[derive(Debug)]
+    struct PoseMsg {
+        position: Vector3Msg,
+        orientation: QuaternionMsg,
+    }
     #[namespace = "geometry_msgs"]
-    struct PoseStampedMsg { header: HeaderMsg, pose: PoseMsg }
+    #[derive(Debug)]
+    struct PoseStampedMsg {
+        header: HeaderMsg,
+        pose: PoseMsg,
+    }
     #[namespace = "geometry_msgs"]
-    struct TwistMsg { linear: Vector3Msg, angular: Vector3Msg }
+    #[derive(Debug)]
+    struct TwistMsg {
+        linear: Vector3Msg,
+        angular: Vector3Msg,
+    }
 
     // Output 6x6 covariance matrices will have length 36. This isn't being enforced
     // programmatically in Rust because CXX does not support fixed-size array bindings.
     #[namespace = "geometry_msgs"]
-    struct PoseWithCovarianceMsg { pose: PoseMsg, covariance: Vec<f64> }
+    #[derive(Debug)]
+    struct PoseWithCovarianceMsg {
+        pose: PoseMsg,
+        covariance: Vec<f64>,
+    }
     // Output 6x6 covariance matrices will have length 36. This isn't being enforced
     // programmatically in Rust because CXX does not support fixed-size array bindings.
     #[namespace = "geometry_msgs"]
-    struct TwistWithCovarianceMsg { twist: TwistMsg, covariance: Vec<f64> }
+    #[derive(Debug)]
+    struct TwistWithCovarianceMsg {
+        twist: TwistMsg,
+        covariance: Vec<f64>,
+    }
 
     #[namespace = "sensor_msgs"]
-    struct PointFieldMsg { name: String, offset: u32, datatype: u8, count: u32 }
+    #[derive(Debug)]
+    struct PointFieldMsg {
+        name: String,
+        offset: u32,
+        datatype: u8,
+        count: u32,
+    }
     #[namespace = "sensor_msgs"]
+    #[derive(Debug)]
     struct PointCloud2Msg {
         header: HeaderMsg,
         height: u32,
@@ -39,6 +87,7 @@ pub mod ffi {
         fields: Vec<PointFieldMsg>,
     }
     #[namespace = "sensor_msgs"]
+    #[derive(Debug)]
     struct ImuMsg {
         // Input 3x3 covariance matrices should have length 9. This isn't being enforced
         // programmatically in Rust because CXX does not support fixed-size array bindings.
@@ -52,6 +101,7 @@ pub mod ffi {
     }
 
     #[namespace = "nav_msgs"]
+    #[derive(Debug)]
     struct OdometryMsg {
         header: HeaderMsg,
         child_frame_id: String,
@@ -59,8 +109,13 @@ pub mod ffi {
         twist: TwistWithCovarianceMsg,
     }
     #[namespace = "nav_msgs"]
-    struct PathMsg { header: HeaderMsg, poses: Vec<PoseStampedMsg> }
+    #[derive(Debug)]
+    struct PathMsg {
+        header: HeaderMsg,
+        poses: Vec<PoseStampedMsg>,
+    }
 
+    #[derive(Debug)]
     struct LidarOutputMsg {
         has_laser_cloud_full: bool,
         has_laser_cloud_full_body: bool,
